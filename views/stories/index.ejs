@@ -1,0 +1,29 @@
+<% layout('./layouts/boilerplate') -%>
+  <table class="table table-sm table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for ( let i=0; i < stories.length; i++ ) { %>
+        <tr>
+          <th scope="row">
+            <%= i + 1 %>
+          </th>
+          <td>
+            <a href="<%= stories[i].url %>" target="_blank" class="link-dark">
+              <%= stories[i].title %>
+            </a>
+            <div class="input-group">
+              <a href="/edit/<%= stories[i]._id %>" class="btn btn-sm text-muted">Edit</a>
+              <form action="/<%= stories[i]._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-sm text-muted btn-delete">Delete</button>
+              </form>
+            </div>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
