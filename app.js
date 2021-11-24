@@ -12,12 +12,13 @@ const favicon = require('serve-favicon');
 const ejsMate = require('ejs-mate');
 
 // Connect with mongo database
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/hackernews';
 main()
     .then(() => console.log('Database connected'))
     .catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://localhost:27017/hackernews');
+    await mongoose.connect(dbUrl);
 }
 
 app.use(favicon(path.join(__dirname, 'public/images/favicon.ico')));
@@ -99,5 +100,5 @@ app.delete('/:id', async (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`);
+    console.log(`App listening at port: ${port}`);
 })
