@@ -15,8 +15,8 @@ Some key technologies I used in this project:
 1. **NodeJS** to use server-side JavaScript and many of its useful packages, such as `method-override` and `serve-favicon`.
 2. Web framework **Express** to make a web server and routings.
 3. **EJS** to make dynamic HTML pages.
-4. **connect-flash** to display a small alert whenenver the user performs an action.
-5. **method-override** to get HTML forms to make a PUT and a DELETE request.
+4. `connect-flash` to display a small alert whenenver the user performs an action.
+5. `method-override` to get HTML forms to make a PUT and a DELETE request.
 
 Some possible improvements:
 1. Pagination when there are more than 30 stories in one scroll.
